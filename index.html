@@ -26,16 +26,10 @@
     </header>
 
     <div class="background">
-        <video
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-    class="conteudo-background">
+        <video autoplay muted loop playsinline preload="auto" class="conteudo-background">
 
-    <source src="./assets/video (1).mp4" type="video/mp4">
-</video>
+            <source src="./assets/video (1).mp4" type="video/mp4">
+        </video>
     </div>
 
     <div class="mascara-video"></div>
@@ -43,7 +37,7 @@
         <div>
             <img src="./assets/logo.png" class="logo">
             <p class="first-of-type">
-            🔧 Encanadores Mario & Luigi<br>
+                🔧 Encanadores Mario & Luigi<br>
                 Resolvendo Seus Problemas Hidráulicos Com Estilo!
             </p>
             <p class="last-of-type">
@@ -71,6 +65,11 @@
 <script>
     const form = document.querySelector('.fale-conosco')
     const background = document.querySelector('.mascara-form')
+    const video = document.querySelector('.conteudo-background');
+
+    video.play().catch(() => {
+        console.log('Autoplay bloqueado pelo navegador');
+    });
 
     function showForm() {
         form.style.left = '50%'
