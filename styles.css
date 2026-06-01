@@ -947,3 +947,16 @@ textarea {
     }
 
 }
+
+@media (max-width: 768px) {
+
+    .conteudo-background {
+        display: none;
+    }
+
+    .background {
+        background-image: url('./assets/background-mobile.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
