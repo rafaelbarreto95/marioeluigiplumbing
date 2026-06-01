@@ -1,0 +1,949 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: -2;
+}
+
+.conteudo-background {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* MÁSCARA ESCURA */
+
+.mascara-video {
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,0.88) 0%,
+            rgba(0,0,0,0.72) 35%,
+            rgba(0,0,0,0.78) 70%,
+            rgba(0,0,0,0.95) 100%
+        );
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    padding: 20px;
+}
+
+.logo-header {
+    height: 80px;
+}
+
+header a {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+header a:hover {
+    color: #C51111;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button {
+    width: 220px;
+    height: 55px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #C51111;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    margin-top: 30px;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+
+    background: #ff1f1f;
+
+    box-shadow:
+        0 0 20px rgba(255,0,0,0.5);
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+.container-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    min-height: 100vh;
+
+    padding: 40px 80px;
+
+    flex-direction: row;
+}
+
+/* =========================
+   SOBRE NÓS
+========================= */
+
+.sobre-nos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 40px 80px;
+}
+
+.sobre-nos div {
+    max-width: 600px;
+}
+
+.logo {
+   
+    height: 300px;
+}
+
+/* TÍTULO */
+
+.sobre-nos p:first-of-type {
+     font-size: clamp(22px, 4vw, 42px);
+    font-weight: 900;
+    line-height: 1.3;
+
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    text-shadow:
+        4px 4px 0 #c51111,
+        8px 8px 15px rgba(0, 0, 0, 0.6);
+
+    margin-bottom: 15px;
+
+    animation: destaqueTitulo 3s ease-in-out infinite;
+}
+
+/* TEXTO */
+
+.sobre-nos p:last-of-type {
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: #f5f5f5;
+
+    background: rgba(0,0,0,0.35);
+
+    padding: 25px;
+
+    border-left: 6px solid #2ecc71;
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   ANIMAÇÃO TEXTO
+========================= */
+
+@keyframes destaqueTitulo {
+
+    0% {
+        transform: translateY(0);
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: translateY(-8px);
+        filter: brightness(1.15);
+    }
+
+    100% {
+        transform: translateY(0);
+        filter: brightness(1);
+    }
+}
+
+/* =========================
+   IMAGEM MARIO
+========================= */
+
+.mario-luigi {
+     width: min(450px, 90vw);
+    max-width: 45%;
+
+    filter:
+        drop-shadow(0 0 25px rgba(255,0,0,0.5));
+
+    animation: flutuarMario 3s ease-in-out infinite;
+}
+
+@keyframes flutuarMario {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.servicos {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 80px 20px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image:
+        linear-gradient(
+            rgba(0,0,0,0.45),
+            rgba(0,0,0,0.55)
+        ),
+        url('./assets/backgroud.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ILUMINAÇÃO */
+
+.servicos::before {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,0.15),
+            transparent 60%
+        );
+
+    pointer-events: none;
+}
+
+/* PROFUNDIDADE */
+
+.servicos::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.8),
+            transparent 40%
+        );
+
+    pointer-events: none;
+}
+
+/* =========================
+   TÍTULO SERVIÇOS
+========================= */
+
+.servicos h1 {
+    font-size: 50px;
+    color: white;
+
+    margin-bottom: 50px;
+
+    text-shadow:
+        3px 3px 10px rgba(0,0,0,0.7);
+
+    z-index: 2;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards-servicos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    z-index: 2;
+}
+
+.card {
+    width: 250px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.3);
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.2),
+        0 0 40px rgba(255,255,0,0.2);
+
+    border-color: #f7b733;
+}
+
+.card h2 {
+    color: #ffe600;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #f1f1f1;
+
+    line-height: 1.5;
+}
+
+/* =========================
+   CANOS
+========================= */
+
+.cano {
+    position: absolute;
+    bottom: -300px;
+
+    width: 180px;
+    height: 300px;
+
+    background: linear-gradient(
+        to right,
+        #0f5f1d,
+        #2ecc71,
+        #0f5f1d
+    );
+
+    border: 8px solid #063b12;
+
+    animation: subirCano 5s infinite ease-in-out;
+}
+
+.cano::before {
+    content: '';
+
+    position: absolute;
+
+    top: -40px;
+    left: -15px;
+
+    width: 210px;
+    height: 50px;
+
+    background: #2ecc71;
+
+    border: 8px solid #063b12;
+
+    border-radius: 10px;
+}
+
+.cano-esquerda {
+    left: 50px;
+}
+
+.cano-direita {
+    right: 50px;
+
+    animation-delay: 2s;
+}
+
+@keyframes subirCano {
+
+    0% {
+        transform: translateY(300px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(300px);
+    }
+}
+
+/* =========================
+   NUVENS
+========================= */
+
+.nuvens {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.nuvem {
+    position: absolute;
+
+    width: 220px;
+    height: 70px;
+
+    background: rgba(255,255,255,0.8);
+
+    border-radius: 50px;
+
+    animation: moverNuvem 25s linear infinite;
+}
+
+.nuvem::before,
+.nuvem::after {
+    content: '';
+
+    position: absolute;
+
+    background: rgba(255,255,255,0.8);
+
+    border-radius: 50%;
+}
+
+.nuvem::before {
+    width: 90px;
+    height: 90px;
+
+    top: -40px;
+    left: 30px;
+}
+
+.nuvem::after {
+    width: 120px;
+    height: 120px;
+
+    top: -60px;
+    right: 20px;
+}
+
+.nuvem:nth-child(1) {
+    top: 80px;
+    animation-duration: 30s;
+}
+
+.nuvem:nth-child(2) {
+    top: 220px;
+
+    transform: scale(0.7);
+
+    animation-duration: 20s;
+    animation-delay: 5s;
+}
+
+.nuvem:nth-child(3) {
+    top: 380px;
+
+    transform: scale(0.9);
+
+    animation-duration: 35s;
+    animation-delay: 10s;
+}
+
+@keyframes moverNuvem {
+
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(1600px);
+    }
+}
+
+/* =========================
+   BLOCOS
+========================= */
+
+.blocos {
+    position: absolute;
+
+    top: 100px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 20px;
+
+    z-index: 2;
+}
+
+.bloco {
+    position: relative;
+
+    width: 80px;
+    height: 80px;
+
+    background: #f7b733;
+
+    border: 6px solid #d98c00;
+
+    box-shadow:
+        inset -4px -4px 0 #ffdd75,
+        inset 4px 4px 0 #c76d00;
+
+    animation:
+        pularBloco 1.5s infinite ease-in-out,
+        brilhoBloco 2s infinite alternate;
+}
+
+.bloco::before {
+    content: '?';
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 45px;
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow: 3px 3px 0 #c76d00;
+}
+
+.bloco:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.bloco:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes pularBloco {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(-20px);
+    }
+
+    40% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes brilhoBloco {
+
+    from {
+        filter: brightness(1);
+    }
+
+    to {
+        filter: brightness(1.25);
+    }
+}
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+.particulas span {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    background: rgba(255,255,255,0.7);
+
+    border-radius: 50%;
+
+    animation: flutuar 10s linear infinite;
+}
+
+.particulas span:nth-child(1) {
+    left: 10%;
+    animation-duration: 12s;
+}
+
+.particulas span:nth-child(2) {
+    left: 30%;
+    animation-duration: 8s;
+}
+
+.particulas span:nth-child(3) {
+    left: 50%;
+    animation-duration: 15s;
+}
+
+.particulas span:nth-child(4) {
+    left: 70%;
+    animation-duration: 10s;
+}
+
+.particulas span:nth-child(5) {
+    left: 90%;
+    animation-duration: 14s;
+}
+
+@keyframes flutuar {
+
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.fale-conosco {
+    position: fixed;
+
+    top: 50%;
+    left: -400px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 20px;
+
+    background: rgba(255,255,255,0.95);
+
+    backdrop-filter: blur(10px);
+
+    border: 4px solid #2ecc71;
+
+    box-shadow:
+        0 0 20px rgba(46,204,113,0.5),
+        0 0 40px rgba(46,204,113,0.3);
+
+    border-radius: 10px;
+
+    z-index: 9999;
+
+    transition: all 0.5s ease;
+}
+
+.mascara-form {
+    visibility: hidden;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 3;
+
+    background: linear-gradient(
+        109deg,
+        rgba(10, 12, 16, 0.99) 15%,
+        rgba(10, 12, 16, 0.7) 50%,
+        rgba(10, 12, 16, 0.99) 85%
+    );
+
+    transition: visibility 1s linear;
+}
+
+input,
+textarea {
+    width: 300px;
+
+    border-radius: 5px;
+    border: 1px solid gray;
+
+    padding: 10px;
+
+    outline-color: #18D80F;
+}
+
+input {
+    height: 40px;
+}
+
+textarea {
+    height: 80px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    position: fixed;
+
+    bottom: 15px;
+    right: 15px;
+
+    z-index: 20;
+
+    cursor: pointer;
+}
+
+.whatsapp img {
+    height: 60px;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* TABLET   */
+
+@media (max-width: 1200px) {
+
+    .sobre-nos {
+        gap: 40px;
+        padding: 0 30px;
+    }
+
+    .mario-luigi {
+        width: 350px;
+    }
+
+    .sobre-nos p:first-of-type {
+        font-size: 34px;
+    }
+
+}
+
+/* MOBILE TELA GRANDE  */
+
+@media (max-width: 900px) {
+
+    .sobre-nos {
+        flex-direction: column;
+        text-align: center;
+
+        min-height: auto;
+
+        padding: 120px 20px 50px;
+    }
+
+    .sobre-nos div {
+        max-width: 100%;
+    }
+
+    .mario-luigi {
+        width: 300px;
+        max-width: 90%;
+    }
+
+    .logo {
+        height: 130px;
+    }
+
+    .sobre-nos p:first-of-type {
+        font-size: 28px;
+    }
+
+    .sobre-nos p:last-of-type {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    header {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    header a {
+        font-size: 18px;
+    }
+
+    .logo-header {
+        height: 60px;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .cards-servicos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .servicos h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .cano,
+    .blocos,
+    .particulas {
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .fale-conosco {
+        width: 90%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    .fale-conosco input,
+    .fale-conosco textarea {
+        width: 100%;
+    }
+
+}
+
+/*  MOLIBE TELA PEQUENA  */ 
+
+@media (max-width: 480px) {
+
+    .sobre-nos {
+        padding: 100px 15px 40px;
+    }
+
+    .sobre-nos p:first-of-type {
+        font-size: 22px;
+    }
+
+    .sobre-nos p:last-of-type {
+        font-size: 14px;
+    }
+
+    .mario-luigi {
+        width: 250px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .servicos h1 {
+        font-size: 28px;
+    }
+
+}

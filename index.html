@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png">
+    <link rel="manifest" href="./icon/site.webmanifest">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Mario Encanador</title>
+</head>
+
+<body>
+    <div class="mascara-form" onclick="hideForm()"></div>
+
+    <header>
+        <img src="./assets/logo-header.png" class="logo-header" />
+        <a>Home</a>
+        <a onclick="showForm()">Fale Conosco</a>
+        <a href="./nossos-serviços.html">Nossos Serviços</a>
+    </header>
+
+    <div class="background">
+        <video loop autoplay muted class="conteudo-background">
+            <source src="./assets/video (1).mp4">
+        </video>
+    </div>
+
+    <div class="mascara-video"></div>
+    <div class="sobre-nos">
+        <div>
+            <img src="./assets/logo.png" class="logo">
+            <p class="first-of-type">
+            🔧 Encanadores Mario & Luigi<br>
+                Resolvendo Seus Problemas Hidráulicos Com Estilo!
+            </p>
+            <p class="last-of-type">
+                Você já se encontrou em uma situação de emergência com encanamento? Vazamentos inesperados, canos
+                entupidos ou torneiras que não param de pingar? Não se preocupe, porque estamos aqui para salvar o
+                dia!
+                Apresentamos a vocês os encanadores mais famosos do Reino dos Cogumelos - Mario e Luigi!
+            </p>
+            <button onclick="showForm()">Entre em Contato</button>
+        </div>
+        <img src="./assets/mario.png" class="mario-luigi">
+    </div>
+
+
+    <a href="https://web.whatsapp.com/" class="whatsapp"><img src="./assets/whatsapp.png" /></a>
+
+    <form action="https://formsubmit.co/rafael.bsilva95@outlook.com" method="POST" class="fale-conosco">
+        <input type="text" name="name" placeholder="Seu Nome" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <textarea type="text" placeholder="Digite seu problema"></textarea>
+        <button type="submit">Pedir Orçamento</button>
+    </form>
+    </div>
+</body>
+<script>
+    const form = document.querySelector('.fale-conosco')
+    const background = document.querySelector('.mascara-form')
+
+    function showForm() {
+        form.style.left = '50%'
+        form.style.transform = 'translateX(-50%)'
+        background.style.visibility = 'visible'
+    }
+
+    function hideForm() {
+        form.style.left = '-330px'
+        form.style.transform = 'translateX(0)'
+        background.style.visibility = 'hidden'
+    }
+</script>
+
+</html>
